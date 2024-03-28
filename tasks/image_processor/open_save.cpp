@@ -59,7 +59,7 @@ void CreateInfoHeader(unsigned char *info_header, const int file_size, int width
     }
 }
 
-void SaveFile(const char *path, Image &image) {
+void Save(const char *path, Image &image) {
     std::ofstream f;
     f.open(path, std::ios::out | std::ios::binary);
     if (!f.is_open()) {
@@ -72,13 +72,13 @@ void SaveFile(const char *path, Image &image) {
     unsigned char file_header[FILE_HEADER_SIZE];
     unsigned char info_header[INFO_HEADER_SIZE];
     CreateFileHeader(file_header, file_size);
-    CreateInfoHeader(info_header, file_size, image.Width(), image.Height(), image.GetXPixels(), image.GetYPixels());
+    CreateInfoHeader(info_header, file_size, image.Width(), image.Height(), image.GetColumnPixels(), image.GetRowPixels());
     f.write(reinterpret_cast<char *>(file_header), FILE_HEADER_SIZE);
     f.write(reinterpret_cast<char *>(info_header), INFO_HEADER_SIZE);
     RGB temp;
     for (int y = 0; y < image.Height(); ++y) {
         for (int x = 0; x < image.Width(); ++x) {
-            temp = image.GetRgb(x, y);
+            temp = image.GetMatrix(x, y);
             unsigned char pixel_r = static_cast<unsigned char>(temp.r_ * 255.0f);  // NOLINT
             unsigned char pixel_g = static_cast<unsigned char>(temp.g_ * 255.0f);  // NOLINT
             unsigned char pixel_b = static_cast<unsigned char>(temp.b_ * 255.0f);  // NOLINT
