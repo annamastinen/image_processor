@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     }
 
     filters["-neg"] = new Negative();
+    filters["-gs"] = new Grayscale();
 
     std::queue<char*> args;
     for (int i = 1; i < argc; ++i) {

@@ -22,3 +22,13 @@ public:
 
     void Change(Image& image, const std::vector<std::string>& params) override;
 };
+
+class Grayscale : public Filter {
+public:
+    Grayscale();
+
+    ~Grayscale() override {
+    }
+
+    void Change(Image& image, const std::vector<std::string>& params) override;
+};
