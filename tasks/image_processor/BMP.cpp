@@ -1,4 +1,4 @@
-#include "open_save.h"
+#include "BMP.h"
 #include "fstream"
 
 void CreateFileHeader(unsigned char *file_header, const int file_size) {
@@ -72,7 +72,8 @@ void Save(const char *path, Image &image) {
     unsigned char file_header[FILE_HEADER_SIZE];
     unsigned char info_header[INFO_HEADER_SIZE];
     CreateFileHeader(file_header, file_size);
-    CreateInfoHeader(info_header, file_size, image.Width(), image.Height(), image.GetColumnPixels(), image.GetRowPixels());
+    CreateInfoHeader(info_header, file_size, image.Width(), image.Height(), image.GetColumnPixels(),
+                     image.GetRowPixels());
     f.write(reinterpret_cast<char *>(file_header), FILE_HEADER_SIZE);
     f.write(reinterpret_cast<char *>(info_header), INFO_HEADER_SIZE);
     RGB temp;

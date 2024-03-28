@@ -6,7 +6,7 @@
 #include "Image.h"
 #include "Filter.cpp"
 #include "map"
-#include "open_save.cpp"
+#include "BMP.cpp"
 #include "RGB.cpp"
 #include "Image.cpp"
 
