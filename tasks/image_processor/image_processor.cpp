@@ -6,6 +6,9 @@
 #include "Image.h"
 #include "Filter.cpp"
 #include "map"
+#include "open_save.cpp"
+#include "RGB.cpp"
+#include "Image.cpp"
 
 int main(int argc, char* argv[]) {
     std::map<std::string, Filter*> filters;
