@@ -1,5 +1,6 @@
 #include "BMP.h"
 #include "fstream"
+#include <iostream>
 
 void CreateFileHeader(unsigned char *file_header, const int file_size) {
     file_header[0] = 'B';

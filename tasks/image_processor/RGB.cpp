@@ -1,4 +1,5 @@
 #include "RGB.h"
+#include <iostream>
 
 RGB::RGB() : r_(0), g_(0), b_(0) {
 }

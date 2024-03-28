@@ -1,5 +1,6 @@
 #include "Image.h"
 #include "RGB.h"
+#include <iostream>
 
 Image::Image() {
 }

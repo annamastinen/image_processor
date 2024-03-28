@@ -2,6 +2,7 @@
 #include <queue>
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "Image.h"
 #include "Filter.cpp"

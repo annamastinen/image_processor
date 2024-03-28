@@ -1,5 +1,6 @@
 #include "Filter.h"
 #include "Image.h"
+#include <iostream>
 
 Negative::Negative() {
 }
