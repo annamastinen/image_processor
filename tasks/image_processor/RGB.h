@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 struct RGB {
     float r_ = 0;

@@ -1,6 +1,7 @@
 #pragma once
 #include "Image.h"
 #include "RGB.h"
+#include <iostream>
 
 static const int FILE_HEADER_SIZE = 14;
 static const int INFO_HEADER_SIZE = 40;

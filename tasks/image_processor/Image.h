@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "RGB.h"
+#include <iostream>
 
 class Image {
 private:
