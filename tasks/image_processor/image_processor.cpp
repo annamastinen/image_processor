@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
             throw std::runtime_error("No such filter.");
         }
         std::vector<std::string> arguments;
-        for (int i = 0; i < filters_count.find(name_filter)->second; i++) {
+        for (int i = 0; i + 1 < filters_count.find(name_filter)->second + 1; i++) {
             if (args.empty()) {
                 throw std::runtime_error("");
             }
