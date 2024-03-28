@@ -15,15 +15,15 @@ int main(int argc, char* argv[]) {
     std::map<std::string, Filter*> filters;
     std::map<std::string, int> filters_count;
 
+    if (argc < 2) {
+        throw std::runtime_error("Wrong input.");
+    }
+
     filters["-neg"] = new Negative();
 
     std::queue<char*> args;
     for (int i = 1; i < argc; ++i) {
         args.push(argv[i]);
-    }
-
-    if (argc < 2) {
-        throw std::runtime_error("Wrong input.");
     }
 
     char* inp = args.front();
@@ -38,12 +38,12 @@ int main(int argc, char* argv[]) {
         std::string name_filter = args.front();
         args.pop();
         if (filters.find(name_filter) == filters.end()) {
-            throw std::runtime_error("No such filter.");
+            break;
         }
         std::vector<std::string> arguments;
         for (int i = 0; i < std::min(100, filters_count.find(name_filter)->second); i++) {
             if (args.empty()) {
-                throw std::runtime_error("");
+                break;
             }
             arguments.push_back(args.front());
             args.pop();
