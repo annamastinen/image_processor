@@ -11,8 +11,6 @@
 #include "RGB.cpp"
 #include "Image.cpp"
 
-const int MAX_FILTERS = 100;
-
 int main(int argc, char* argv[]) {
     std::map<std::string, Filter*> filters;
     std::map<std::string, int> filters_count;
@@ -43,7 +41,7 @@ int main(int argc, char* argv[]) {
             break;
         }
         std::vector<std::string> arguments;
-        for (int i = 0; i < std::min(MAX_FILTERS, filters_count.find(name_filter)->second); i++) {
+        for (int i = 0; i < filters_count.find(name_filter)->second; i++) {
             if (args.empty()) {
                 break;
             }
